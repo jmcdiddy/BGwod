@@ -185,6 +185,7 @@ function getWorkout(intent, session, callback) {
           .replace(/\n/g, ', ')
           .replace(/AHAP/g, 'as heavy as possible')
           .replace(/T2B/g, 'toes to bar')
+          .replace(/C2B/g, 'chest to bar')
           .replace(/K2E/g, 'knees to elbow')
           .replace(/HKR/g, 'hanging knee raises')
           .replace(/ x /g, ' times ');
