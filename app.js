@@ -46,7 +46,14 @@ fetch(`https://www.crossfitsterling.com/${tomorrow}`).then(function(res){
       .replace(/T2B/g, 'toes to bar')
       .replace(/K2E/g, 'knees to elbow')
       .replace(/HKR/g, 'hanging knee raises')
-      .replace(/ x /g, ' times ');
+      .replace(/AMRAP/g, 'as many rounds as possible')
+      .replace(/DU/g, 'Double Unders')
+      .replace(/AMRAP/g, 'as many rounds as possible')
+      .replace(/EMOM/g, 'every minute on the minute')
+      .replace(/KB/g, 'kettle bell')
+      .replace(/CFBG/g, 'crossfit bluegrass')
+      .replace(/KB/g, 'kettle bell')
+      .replace(/ x /g, ' times ');
     console.log(entryText);
   }
 });
