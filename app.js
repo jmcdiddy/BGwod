@@ -2,7 +2,7 @@ var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var $;
 
-// date format for crossfitsterling.com june-16-2016
+// date format for crossfitbluegrass.com jan-10-2017
 
 var date = new Date();
 var day = date.getDate();
@@ -27,8 +27,8 @@ var month = months[date.getMonth()].toLowerCase();
 var today = `${month}-${day}-${year}`;
 var tomorrow = `${month}-${nextDay}-${year}`;
 
-fetch(`https://www.crossfitsterling.com/${tomorrow}`).then(function(res){
-  if(res.url === 'https://www.crossfitsterling.com/' || res.status === 500){
+fetch(`https://www.crossfitbluegrass.com/blog/${tomorrow}`).then(function(res){
+  if(res.url === 'https://www.crossfitbluegrass.com/blog/' || res.status === 500){
     return 'not posted'
   } else {
     return res.text();
@@ -47,10 +47,10 @@ fetch(`https://www.crossfitsterling.com/${tomorrow}`).then(function(res){
       .replace(/K2E/g, 'knees to elbow')
       .replace(/HKR/g, 'hanging knee raises')
       .replace(/AMRAP/g, 'as many rounds as possible')
-      .replace(/DU/g, 'Double Unders')
+      .replace(/DU/g, 'double unders')
+      .replace(/ME/g, 'max effort')
       .replace(/AMRAP/g, 'as many rounds as possible')
       .replace(/EMOM/g, 'every minute on the minute')
-      .replace(/KB/g, 'kettle bell')
       .replace(/CFBG/g, 'crossfit bluegrass')
       .replace(/KB/g, 'kettle bell')
       .replace(/ x /g, ' times ');
