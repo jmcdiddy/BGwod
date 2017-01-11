@@ -168,7 +168,7 @@ function getWorkout(intent, session, callback) {
       wodDate = `${month}-${nextDay}-${year}`
     }
 
-    fetch(`https://www.crossfitbluegrass.com/blog/${wodDate}`).then(function(res){
+    fetch(`https://www.crossfitbluegrass.com/blog/`).then(function(res){
       if(res.url === 'https://www.crossfitbluegrass.com/blog/' || res.status === 500){
         return 'not posted'
       } else {
