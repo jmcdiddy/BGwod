@@ -27,7 +27,7 @@ var month = months[date.getMonth()].toLowerCase();
 var today = `${month}-${day}-${year}`;
 var tomorrow = `${month}-${nextDay}-${year}`;
 
-fetch(`https://www.crossfitbluegrass.com/blog/${tomorrow}`).then(function(res){
+fetch(`https://www.crossfitbluegrass.com/blog/`).then(function(res){
   if(res.url === 'https://www.crossfitbluegrass.com/blog/' || res.status === 500){
     return 'not posted'
   } else {
