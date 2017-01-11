@@ -168,8 +168,8 @@ function getWorkout(intent, session, callback) {
       wodDate = `${month}-${nextDay}-${year}`
     }
 
-    fetch(`https://www.crossfitsterling.com/${wodDate}`).then(function(res){
-      if(res.url === 'https://www.crossfitsterling.com/' || res.status === 500){
+    fetch(`https://www.crossfitbluegrass.com/blog/${wodDate}`).then(function(res){
+      if(res.url === 'https://www.crossfitbluegrass.com/blog/' || res.status === 500){
         return 'not posted'
       } else {
         return res.text();
@@ -188,6 +188,12 @@ function getWorkout(intent, session, callback) {
           .replace(/C2B/g, 'chest to bar')
           .replace(/K2E/g, 'knees to elbow')
           .replace(/HKR/g, 'hanging knee raises')
+          .replace(/AMRAP/g, 'as many rounds as possible')
+          .replace(/DU/g, 'double unders')
+          .replace(/ME/g, 'max effort')
+          .replace(/EMOM/g, 'every minute on the minute')
+          .replace(/CFBG/g, 'crossfit bluegrass')
+          .replace(/KB/g, 'kettle bell')
           .replace(/ x /g, ' times ');
         speechOutput = entryText;
       }
